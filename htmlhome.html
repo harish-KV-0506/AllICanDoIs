@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HTML Course | All I Can Do Is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--primary:#0F766E;--accent:#F97316;--on-accent:#1b1209;--bg:#F0FDFA;--text:#134E4A;--surface:#fff;--muted:#3f6f6a;--line:#bfe6df;--soft:#d5f5ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1f1e;--text:#e6fbf7;--surface:#10302d;--muted:#a5d6cf;--line:#1d4d48;--soft:#134540;--primary:#2dd4bf}}
+:root[data-theme="dark"]{--bg:#0b1f1e;--text:#e6fbf7;--surface:#10302d;--muted:#a5d6cf;--line:#1d4d48;--soft:#134540;--primary:#2dd4bf}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Poppins,Inter,sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));z-index:20}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;flex-wrap:wrap}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;border-bottom:2px solid transparent}
+nav ul a:hover{border-color:var(--accent)}
+.tlogo{font:700 .95rem 'JetBrains Mono',monospace;text-decoration:none;display:flex;align-items:center;gap:9px;background:#0b1f1e;color:#e6fbf7;padding:7px 14px 7px 12px;border-radius:10px;border:1px solid #1d4d48;transition:box-shadow .3s}
+.tlogo:hover{box-shadow:0 0 0 4px rgba(249,115,22,.28)}
+.dots{display:flex;gap:4px}.dots s{width:8px;height:8px;border-radius:50%;background:#ef4444;display:block}.dots s:nth-child(2){background:#fbbf24}.dots s:nth-child(3){background:#2dd4bf}
+.tlogo .p{color:#2dd4bf}.tlogo .n{color:#F97316;display:inline-block;overflow:hidden;white-space:nowrap;animation:tl 1.6s steps(15) both}
+.tlogo .cur{width:8px;height:1.05em;background:#F97316;animation:blink 1s steps(1) infinite}
+@keyframes tl{from{width:0}to{width:15ch}}
+@keyframes blink{50%{opacity:0}}
+.tg{border:2px solid var(--line);background:var(--surface);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;transition:transform .4s}
+.tg:hover{transform:rotate(180deg)}
+.btn{display:inline-block;text-decoration:none;font:600 1rem Poppins,sans-serif;padding:12px 22px;border-radius:999px;border:2px solid var(--primary);transition:transform .2s,box-shadow .2s;cursor:pointer;background:none;color:var(--primary)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px -8px var(--accent)}
+.btn.go{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+@keyframes shine{to{background-position:200% 0}}
+h1,.sec h2{--g1:var(--text);background:linear-gradient(90deg,var(--g1),var(--primary) 50%,var(--accent));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite alternate;letter-spacing:-.02em;width:fit-content;max-width:100%}
+#top{position:relative;padding:48px 0 70px;overflow:hidden}
+#top::before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,70%) var(--my,30%),rgba(249,115,22,.2),transparent 60%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:320px;height:320px;background:var(--primary);top:-80px;left:-90px}.b2{width:260px;height:260px;background:var(--accent);bottom:-60px;right:-60px;animation-delay:-6s}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.15)}}
+.hero{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(3rem,9vw,6rem);line-height:1}
+.hero p.sub{font:600 clamp(1.1rem,2.4vw,1.4rem) Poppins,sans-serif;color:var(--primary);margin:14px 0 8px}
+.hero p.d{color:var(--muted);max-width:46ch;margin:0 0 18px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.stats span{font:700 .82rem 'JetBrains Mono',monospace;padding:6px 12px;border:1px solid var(--line);border-radius:6px 14px 6px 14px;background:var(--surface)}
+.stats b{color:var(--accent)}
+.edit{position:relative;background:#0b1f1e;border:1px solid #1d4d48;border-radius:16px;box-shadow:0 24px 50px -22px rgba(15,118,110,.8);overflow:hidden}
+.edit .top{display:flex;gap:6px;align-items:center;padding:10px 14px;background:#10302d;border-bottom:1px solid #1d4d48;color:#a5d6cf;font:500 .78rem 'JetBrains Mono',monospace}
+.edit .top s{width:10px;height:10px;border-radius:50%;background:#ef4444;display:block}.edit .top s:nth-child(2){background:#fbbf24}.edit .top s:nth-child(3){background:#2dd4bf}
+.edit pre{margin:0;padding:16px;min-height:210px;color:#2dd4bf;font:500 .9rem/1.6 'JetBrains Mono',monospace;white-space:pre-wrap}
+.edit pre::after{content:"";display:inline-block;width:8px;height:1em;background:#F97316;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+.fl{position:absolute;font:700 1rem 'JetBrains Mono',monospace;color:var(--accent);animation:fl 5s ease-in-out infinite;pointer-events:none}
+@keyframes fl{50%{transform:translateY(-14px) rotate(6deg)}}
+.mq{overflow:hidden;background:var(--accent);color:var(--on-accent);transform:rotate(-1.6deg);margin:20px -3vw;padding:10px 0;white-space:nowrap;font:800 1.05rem 'JetBrains Mono',monospace;letter-spacing:.14em;position:relative;z-index:2}
+.mq div{display:inline-block;animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:64px 0}
+.sec h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+.lead{color:var(--muted);max-width:60ch;margin:10px 0 28px}
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start}
+.card{position:relative;overflow:hidden;isolation:isolate;border-radius:6px 22px 6px 22px;background:linear-gradient(160deg,color-mix(in srgb,var(--surface) 92%,transparent),color-mix(in srgb,var(--soft) 70%,transparent));border:1px solid var(--line);transition:border-color .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--cx,50%) var(--cy,0%),rgba(249,115,22,.22),transparent 65%);opacity:0;transition:opacity .3s;z-index:-1}
+.card:hover::before{opacity:1}
+.card::after{content:"";position:absolute;left:0;right:0;top:-70%;height:60%;background:linear-gradient(to bottom,transparent,rgba(45,212,191,.18),transparent);animation:scan 4.5s linear infinite;pointer-events:none;z-index:-1}
+@keyframes scan{to{top:140%}}
+.card:hover,.card[open]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 18px 40px -18px var(--primary)}
+.card.fin{border-color:#2dd4bf;box-shadow:0 0 0 1px #2dd4bf,0 0 28px -6px #2dd4bf}
+summary{list-style:none;cursor:pointer;padding:20px}
+summary::-webkit-details-marker{display:none}
+.no{font:700 .72rem 'JetBrains Mono',monospace;color:var(--accent);letter-spacing:.1em;display:flex;justify-content:space-between}
+summary h3{font-size:1.15rem;margin:8px 0 4px}
+summary p{margin:0;color:var(--muted);font-size:.92rem}
+.pb{height:4px;border-radius:2px;background:var(--line);margin-top:14px;overflow:hidden}
+.pb i{display:block;height:100%;width:var(--p,0%);background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .5s}
+.ls{padding:0 20px 18px;display:grid;gap:4px}
+.ls label{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:8px;cursor:pointer;font-size:.95rem;transition:background .2s}
+.ls label:hover{background:var(--soft)}
+.ls input{accent-color:var(--accent);width:17px;height:17px}
+.ls input:checked+span{text-decoration:line-through;opacity:.6}
+.tsec{background-image:linear-gradient(rgba(45,212,191,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,.07) 1px,transparent 1px),linear-gradient(135deg,#071a19,#0b2b29);background-size:42px 42px,42px 42px,100% 100%;color:#e6fbf7;clip-path:polygon(0 5vw,100% 0,100% calc(100% - 5vw),0 100%);margin:-2vw 0;padding:calc(64px + 5vw) 0}
+.tsec h2{--g1:#e6fbf7}.tsec .lead{color:#a5d6cf}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{font:600 .85rem 'JetBrains Mono',monospace;background:transparent;color:#2dd4bf;border:1px solid #1d4d48;border-radius:999px;padding:6px 14px;cursor:pointer;transition:transform .15s,background .15s}
+.chip:hover,.chip.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent);transform:translateY(-2px)}
+.play{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pane{border:1px solid #1d4d48;border-radius:14px;overflow:hidden;background:#0b1f1e}
+.pane h4{margin:0;padding:8px 14px;background:#10302d;font:700 .78rem 'JetBrains Mono',monospace;color:#a5d6cf}
+textarea{width:100%;height:300px;border:0;resize:vertical;background:#0b1f1e;color:#d9f7f1;padding:14px;font:500 .9rem/1.6 'JetBrains Mono',monospace;caret-color:#F97316}
+iframe{width:100%;height:300px;border:0;background:#fff;display:block}
+.next{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer{padding:36px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted)}
+footer a{font-weight:600;color:var(--primary);text-decoration:none;margin:0 9px}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+@media (max-width:820px){.hero,.play{grid-template-columns:1fr}.hero .fl{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1!important;transform:none!important}.tlogo .n{width:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<!-- TODO: point Home, Next and ymira links to the real pages -->
+<nav><div class="wrap">
+  <a class="tlogo" href="index.html" aria-label="All I Can Do Is home"><span class="dots"><s></s><s></s><s></s></span><span class="p">$</span><span class="n">all_i_can_do_is</span><span class="cur"></span></a>
+  <ul><li><a href="#syllabus">Syllabus</a></li><li><a href="#play">Playground</a></li><li><a href="index.html#topics">All topics</a></li></ul>
+  <button class="tg" id="tg" aria-label="Toggle dark mode">&#9680;</button>
+</div></nav>
+
+<main>
+<section id="top"><div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap hero">
+  <div>
+    <h1 id="h1">HTML</h1>
+    <p class="sub">The skeleton of every website.</p>
+    <p class="d">Start from zero. Learn tags, links, images, forms and modern page structure, then practise live in the browser.</p>
+    <div class="stats"><span><b id="sm">0</b> modules</span><span><b id="sl">0</b> lessons</span><span><b id="sp">0%</b> done</span></div>
+    <a class="btn go" href="#syllabus">Start module 01</a> <a class="btn" href="#play">Open playground</a>
+  </div>
+  <div style="position:relative">
+    <span class="fl" style="top:-14px;left:8%">&lt;div&gt;</span><span class="fl" style="top:42%;right:-6px;animation-delay:-2s">&lt;a&gt;</span><span class="fl" style="bottom:-16px;left:30%;animation-delay:-3.5s">&lt;p&gt;</span>
+    <div class="edit"><div class="top"><s></s><s></s><s></s><span>index.html</span></div><pre id="ty" aria-label="Sample HTML code"></pre></div>
+  </div>
+</div></section>
+
+<div class="mq" aria-hidden="true"><div data-t="TAGS // ATTRIBUTES // LINKS // IMAGES // FORMS // SEMANTIC HTML"></div></div>
+
+<section id="syllabus" class="sec"><div class="wrap">
+  <h2>HTML syllabus</h2>
+  <p class="lead">Seven modules, from your first page to real projects. Tick lessons as you finish them and your progress is saved in this browser.</p>
+  <div class="mods" id="mods"></div>
+</div></section>
+
+<section id="play" class="sec tsec"><div class="wrap">
+  <h2>Live playground</h2>
+  <p class="lead">Edit the code on the left and the page updates on the right. Break it, fix it, learn it.</p>
+  <div class="chips" id="chips"></div>
+  <div class="play">
+    <div class="pane"><h4>EDITOR // html</h4><textarea id="ta" spellcheck="false" aria-label="HTML editor"></textarea></div>
+    <div class="pane"><h4>PREVIEW // browser</h4><iframe id="fr" sandbox title="Live preview"></iframe></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap next">
+  <div><h2 style="font-size:1.6rem">Finished HTML? Style it next.</h2><p class="lead" style="margin:8px 0 0">CSS turns plain structure into a design.</p></div>
+  <a class="btn go" href="css.html">Go to CSS</a>
+</div></section>
+</main>
+
+<footer><div class="wrap"><a href="index.html">Home</a><a href="index.html#topics">Topics</a><a href="#ymira" target="_blank" rel="noopener">ymira on YouTube</a><div style="margin-top:8px">&copy; All I Can Do Is. Built by Team ymira.</div></div></footer>
+
+<script>
+(function(){
+var R=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,$=function(i){return document.getElementById(i)};
+var M=[
+['Getting Started','How the web works and your first page.',['What is HTML','How the web works','Tools: VS Code and a browser','Your first page','Page structure: doctype, html, head, body']],
+['Text and Links','Content, formatting and navigation.',['Headings and paragraphs','Text formatting','Links and anchors','Lists: ul, ol, dl','Images and alt text','Comments and entities']],
+['Structure and Layout','Organise a page into meaningful blocks.',['div and span','Block vs inline elements','Semantic tags: header, nav, main, section, footer','Tables','iframes']],
+['Forms and Input','Collect data from users.',['Form basics','Input types','Labels','Select, textarea, radio, checkbox','Validation attributes','Buttons and submit']],
+['Media and Graphics','Audio, video and drawings.',['Audio and video','SVG basics','Canvas intro','Favicons and social images']],
+['Modern HTML5 and Best Practices','Write pages that everyone can use.',['Accessibility: alt, labels, ARIA','SEO: title, meta, headings','Responsive viewport tag','Data attributes','Validating your HTML','Clean code and indentation']],
+['Projects','Put everything together.',['Personal portfolio page','Registration form','Blog layout','Landing page']]];
+var key='aicdi-html-progress',done={};
+try{done=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+var total=0;M.forEach(function(m){total+=m[2].length});
+$('sm').textContent=M.length;$('sl').textContent=total;
+var box=$('mods');
+M.forEach(function(m,i){
+ var d=document.createElement('details');d.className='card';if(i===0)d.open=true;
+ var h='<summary><div class="no"><span>// MODULE '+String(i+1).padStart(2,'0')+'</span><span class="ct"></span></div><h3>'+m[0]+'</h3><p>'+m[1]+'</p><div class="pb"><i></i></div></summary><div class="ls">';
+ m[2].forEach(function(l,j){var id=i+'-'+j;h+='<label><input type="checkbox" data-id="'+id+'"'+(done[id]?' checked':'')+'><span>'+l+'</span></label>'});
+ d.innerHTML=h+'</div>';box.appendChild(d);
+});
+function upd(){
+ var all=0;
+ box.querySelectorAll('.card').forEach(function(c,i){
+  var cs=c.querySelectorAll('input'),n=0;cs.forEach(function(x){if(x.checked)n++});all+=n;
+  c.querySelector('.ct').textContent=n+'/'+cs.length;c.querySelector('.pb i').style.setProperty('--p',(n/cs.length*100)+'%');
+  c.classList.toggle('fin',n===cs.length);
+ });
+ $('sp').textContent=Math.round(all/total*100)+'%';
+}
+box.addEventListener('change',function(e){var t=e.target;if(t.dataset.id){if(t.checked)done[t.dataset.id]=1;else delete done[t.dataset.id];try{localStorage.setItem(key,JSON.stringify(done))}catch(x){}upd()}});
+upd();
+var S={'Hello':'<h1>Hello, world!</h1>\n<p>This is my first web page.</p>','Links':'<h2>My links</h2>\n<a href="https://example.com">Visit a site</a>\n<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n  <li>JavaScript</li>\n</ul>','Form':'<form>\n  <label>Name <input type="text" placeholder="Your name"></label><br><br>\n  <label>Course\n    <select><option>HTML</option><option>Python</option></select>\n  </label><br><br>\n  <button type="button">Join</button>\n</form>','Table':'<table border="1" cellpadding="8">\n  <tr><th>Tag</th><th>Use</th></tr>\n  <tr><td>&lt;h1&gt;</td><td>Main heading</td></tr>\n  <tr><td>&lt;p&gt;</td><td>Paragraph</td></tr>\n</table>'};
+var ta=$('ta'),fr=$('fr'),ch=$('chips'),tm;
+function draw(){fr.srcdoc='<style>body{font-family:sans-serif;padding:14px;color:#133}</style>'+ta.value}
+ta.addEventListener('input',function(){clearTimeout(tm);tm=setTimeout(draw,200)});
+Object.keys(S).forEach(function(k,i){var b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=k;b.onclick=function(){ch.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on');ta.value=S[k];draw()};ch.appendChild(b)});
+ta.value=S.Hello;draw();
+var code='<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Hello, world!</h1>\n    <p>I just wrote HTML.</p>\n  </body>\n</html>',ty=$('ty'),c=0;
+if(reduce)ty.textContent=code;else(function t(){ty.textContent=code.slice(0,c);if(c<code.length){c++;setTimeout(t,45)}else{c=0;setTimeout(t,2600)}})();
+$('tg').onclick=function(){var d=R.dataset.theme?R.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;R.dataset.theme=d?'light':'dark'};
+document.querySelectorAll('.mq div').forEach(function(d){d.textContent=(d.dataset.t+' // ').repeat(8)});
+var bar=$('bar'),blobs=document.querySelectorAll('.blob');
+addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%';if(!reduce){var y=scrollY*.12;blobs.forEach(function(b,i){b.style.translate='0 '+(i?-y:y)+'px'})}},{passive:true});
+var top=$('top');top.addEventListener('mousemove',function(e){var r=top.getBoundingClientRect();top.style.setProperty('--mx',(e.clientX-r.left)+'px');top.style.setProperty('--my',(e.clientY-r.top)+'px')});
+box.querySelectorAll('.card').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--cx',(e.clientX-r.left)+'px');c.style.setProperty('--cy',(e.clientY-r.top)+'px')})});
+var G='01<>/{}$#_*';
+function scr(el){var o=el.dataset.o||(el.dataset.o=el.textContent);if(reduce)return;var f=0,n=22;el.setAttribute('aria-label',o);(function t(){var s='';for(var i=0;i<o.length;i++){s+=(o[i]===' '||i<f*o.length/n)?o[i]:G[Math.floor(Math.random()*G.length)]}el.textContent=s;if(++f<=n)setTimeout(t,35);else el.textContent=o})()}
+setTimeout(function(){scr($('h1'))},300);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){scr(e.target);io.unobserve(e.target)}})},{threshold:.6});
+document.querySelectorAll('.sec h2').forEach(function(h){io.observe(h)});
+var els=document.querySelectorAll('.sec .lead,.card,.pane,.chips'),ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');ro.unobserve(t);setTimeout(function(){t.classList.remove('rv','in')},1100)}})},{threshold:.12});
+els.forEach(function(el,i){el.classList.add('rv');el.style.setProperty('--d',(i%4)*.08+'s');ro.observe(el)});
+})();
+</script>
+</body>
+</html>
